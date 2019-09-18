@@ -1,0 +1,45 @@
+{
+  "name": "@deepstream/clusternode-redis",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/src/redis-cluster-node.js",
+  "scripts": {
+    "tsc": "tsc",
+    "lint": "tslint --project .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha --opts mocha.opts 'src/*.spec.ts'",
+    "coverage": "nyc mocha src/",
+    "ci": "npm run coverage",
+    "docker": "docker start -p 6379:6379 redis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepstreamIO/deepstream.io-clusternode-redis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deepstreamIO/deepstream.io-clusternode-redis/issues"
+  },
+  "homepage": "http://deepstream.io",
+  "dependencies": {
+    "@deepstream/types": "^1.0.2",
+    "ioredis": "^4.11.2"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.0.13",
+    "@deepstream/protobuf": "^1.0.1",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
+    "mocha": "^6.2.0",
+    "nyc": "^13.3.0",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  },
+  "author": "deepstreamHub GmbH",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}
