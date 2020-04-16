@@ -2,7 +2,7 @@ import * as Redis from 'ioredis'
 import { Cluster } from 'ioredis'
 import { EventEmitter } from 'events'
 import { EVENT } from '@deepstream/types'
-import * as url from 'url'
+import { URL} from 'url'
 
 export class RedisConnection {
   private isReady: boolean = false
@@ -13,9 +13,10 @@ export class RedisConnection {
     this.validateOptions(options)
 
     if (options.url) {
-      const REDIS_URL = url.parse(options.url)
+      const REDIS_URL = new URL(options.url)
       options.host = REDIS_URL.hostname
       options.port = REDIS_URL.port
+      options.password = REDIS_URL.password
     }
 
     if (options.nodes instanceof Array) {
