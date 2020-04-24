@@ -1,6 +1,6 @@
 {
   "name": "@deepstream/clusternode-redis",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/src/redis-cluster-node.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "lint": "tslint --project .",
     "lint:fix": "npm run lint -- --fix",
     "test": "mocha --opts mocha.opts 'src/*.spec.ts'",
-    "coverage": "nyc mocha src/",
-    "ci": "npm run coverage",
+    "coverage": "nyc npm run test",
+    "ci": "npm run tsc && npm run coverage",
     "docker": "docker start -p 6379:6379 redis"
   },
   "repository": {
