@@ -1,6 +1,6 @@
 {
   "name": "@deepstream/clusternode-redis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/src/redis-cluster-node.js",
   "scripts": {
